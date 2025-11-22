@@ -65,114 +65,112 @@ const CITIIS = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans">
-      <div className="relative h-64 md:h-96 w-full overflow-hidden" data-aos="fade-in">
+    <div className="bg-gray-50 min-h-screen">
+      {/* Banner */}
+      <div className="relative h-48 md:h-64 w-full overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `linear-gradient(to right, rgba(24, 78, 119, 0.9), rgba(24, 78, 119, 0.7)), url(${Banner})`,
+            backgroundImage: `linear-gradient(to right, rgba(24, 78, 119, 0.9), rgba(30, 96, 145, 0.8)), url(${Banner})`,
           }}
         ></div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-          <h1 className="text-white text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
-            CITIIS 2.0
-          </h1>
-          <p className="text-white text-xl md:text-2xl max-w-3xl drop-shadow-lg">
-            City Investments to Innovate, Integrate and Sustain
-          </p>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center px-4">
+            <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
+              CITIIS 2.0
+            </h1>
+            <p className="text-white text-lg md:text-xl max-w-3xl mx-auto opacity-90">
+              City Investments to Innovate, Integrate and Sustain
+            </p>
+          </div>
         </div>
       </div>
 
-      <section className="py-12 md:py-16 bg-gray-50" data-aos="fade-up">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-10 items-start">
-            <div data-aos="fade-right">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#184E77] mb-6 relative pb-2">
-                About CITIIS 2.0
-                <div className="absolute bottom-0 left-0 w-16 h-1 bg-[#1E6091]"></div>
-              </h2>
-              <div className="bg-gray-200 border-2 border-dashed w-full h-64 flex items-center justify-center text-gray-500">
-                <img src={Image} alt="CITIIS 2.0 Infographic" className="w-full h-full" />
-              </div>
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* About Section */}
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
+          <div className="p-6 md:p-8">
+            <div className="mb-6 pb-4 border-b border-gray-200">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">About CITIIS 2.0</h2>
+              <p className="text-gray-600 text-sm">
+                A flagship program under the Government of India's Smart Cities Mission
+              </p>
             </div>
 
-            <div data-aos="fade-left">
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold text-[#1E6091] mb-2">Program Overview</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  CITIIS (City Investments to Innovate, Integrate and Sustain) is a flagship program under the 
-                  Government of India's Smart Cities Mission. CITIIS 2.0 represents a strategic partnership 
-                  between the Ministry of Housing and Urban Affairs (MoHUA) and international development 
-                  agencies to foster sustainable urban development.
-                </p>
-              </div>
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold text-[#1E6091] mb-2">Strategic Focus Areas</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  The program provides financial and technical assistance for:
-                </p>
-                <ul className="list-disc pl-5 mt-2 space-y-1 text-gray-700">
-                  <li>Promoting circular economy through integrated waste management at city level</li>
-                  <li>Climate-oriented reform actions at state level</li>
-                  <li>Institutional strengthening and knowledge management at national level</li>
-                </ul>
-              </div>
+            <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-semibold text-[#1E6091] mb-2">International Collaboration</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Conceived by MoHUA in collaboration with AFD, KfW (German Development Bank), European Union, 
-                  and National Institute of Urban Affairs (NIUA), CITIIS 2.0 addresses critical urban challenges 
-                  while contributing to India's commitments under the Paris Agreement and Sustainable Development Goals.
-                </p>
+                <img src={Image} alt="CITIIS 2.0 Infographic" className="w-full rounded-lg" />
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-[#1E6091] mb-2">Program Overview</h3>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    CITIIS (City Investments to Innovate, Integrate and Sustain) is a flagship program under the 
+                    Government of India's Smart Cities Mission. CITIIS 2.0 represents a strategic partnership 
+                    between the Ministry of Housing and Urban Affairs (MoHUA) and international development 
+                    agencies to foster sustainable urban development.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-[#1E6091] mb-2">Strategic Focus Areas</h3>
+                  <p className="text-gray-700 text-sm mb-2">The program provides financial and technical assistance for:</p>
+                  <ul className="list-disc pl-5 space-y-1 text-gray-700 text-sm">
+                    <li>Promoting circular economy through integrated waste management at city level</li>
+                    <li>Climate-oriented reform actions at state level</li>
+                    <li>Institutional strengthening and knowledge management at national level</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-[#1E6091] mb-2">International Collaboration</h3>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    Conceived by MoHUA in collaboration with AFD, KfW (German Development Bank), European Union, 
+                    and National Institute of Urban Affairs (NIUA), CITIIS 2.0 addresses critical urban challenges 
+                    while contributing to India's commitments under the Paris Agreement and Sustainable Development Goals.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
 
-      <section className="py-12 md:py-16 bg-white" data-aos="fade-up">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12" data-aos="fade-down">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#184E77] mb-3">
-              CITIIS Project Gallery
-            </h2>
-            <div className="w-20 h-1 bg-[#1E6091] mx-auto"></div>
-            <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
-              Showcasing innovative urban development projects under the CITIIS program
-            </p>
-          </div>
+        {/* Gallery Section */}
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+          <div className="p-6 md:p-8">
+            <div className="mb-6 pb-4 border-b border-gray-200">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">CITIIS Project Gallery</h2>
+              <p className="text-gray-600 text-sm">
+                Showcasing innovative urban development projects under the CITIIS program
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {images.map((image, index) => (
-              <div
-                key={image.id}
-                className="group relative overflow-hidden shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
-                onClick={() => openLightbox(image)}
-                data-aos="zoom-in"
-                data-aos-delay={index * 100}
-              >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#184E77] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 p-5 text-white">
-                    <h3 className="text-xl font-bold mb-1">{image.title}</h3>
-                    <p className="text-sm opacity-90">{image.description}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {images.map((image, index) => (
+                <div
+                  key={image.id}
+                  className="group relative overflow-hidden rounded-lg border border-gray-200 hover:shadow-md transition-shadow cursor-pointer"
+                  onClick={() => openLightbox(image)}
+                >
+                  <div className="aspect-square overflow-hidden">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-4 bg-white">
+                    <h3 className="font-semibold text-gray-900 text-sm mb-1">{image.title}</h3>
+                    <p className="text-xs text-gray-600">{image.description}</p>
                   </div>
                 </div>
-                <div className="p-4 border-t border-gray-100">
-                  <h3 className="font-semibold text-[#184E77]">{image.title}</h3>
-                  <p className="text-sm text-gray-600 mt-1">{image.description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {lightboxOpen && currentImage && (
         <div

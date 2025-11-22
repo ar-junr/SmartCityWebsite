@@ -1,101 +1,154 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { TrendingUp, DollarSign, Percent } from 'lucide-react';
 import Banner from '../../assets/banners/fundBanner.png';
 import FundUtilization from '../../assets/images/fundUtilization.jpg';
 import FundSource from '../../assets/images/fund_source.jpg';
+
 const ProjectFunds = () => {
+  const [totalAllocated, setTotalAllocated] = useState(0);
+  const [fundsUtilized, setFundsUtilized] = useState(0);
+  const [utilizationRate, setUtilizationRate] = useState(0);
+  const hasAnimated = useRef(false);
+
+  const targetValues = {
+    totalAllocated: 182.61,
+    fundsUtilized: 142.28,
+    utilizationRate: 78
+  };
+
+  useEffect(() => {
+    if (hasAnimated.current) return;
+    
+    const duration = 2000; // 2 seconds
+    const steps = 60;
+    const stepDuration = duration / steps;
+    
+    let currentStep = 0;
+    
+    const animate = () => {
+      currentStep++;
+      const progress = currentStep / steps;
+      const easeOut = 1 - Math.pow(1 - progress, 3); // Easing function
+      
+      setTotalAllocated(targetValues.totalAllocated * easeOut);
+      setFundsUtilized(targetValues.fundsUtilized * easeOut);
+      setUtilizationRate(targetValues.utilizationRate * easeOut);
+      
+      if (currentStep < steps) {
+        setTimeout(animate, stepDuration);
+      } else {
+        hasAnimated.current = true;
+      }
+    };
+    
+    animate();
+  }, []);
+
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen">
       {/* Banner */}
       <div className="relative h-48 md:h-64 w-full overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center object-cover"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `linear-gradient(to right, rgba(0, 60, 80, 0.85), rgba(0, 128, 128, 0.6)), url(${Banner})`,
+            backgroundImage: `linear-gradient(to right, rgba(24, 78, 119, 0.9), rgba(30, 96, 145, 0.8)), url(${Banner})`,
           }}
         ></div>
         <div className="relative z-10 flex items-center justify-center h-full">
-          <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold text-center px-4 drop-shadow-lg">
+          <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold text-center px-4">
             Project Funds
           </h1>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
-        {/* Introduction */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Financial Management & Allocation
-          </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-            Transparent tracking of project funding sources and utilization patterns across all 
-            Smart City initiatives in Thiruvananthapuram
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Header */}
+        <div className="mb-8 pb-6 border-b border-gray-200">
+          <div className="flex items-center gap-3 mb-2">
+            <DollarSign className="w-6 h-6 text-[#1E6091]" />
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Financial Management & Allocation</h2>
+          </div>
+          <p className="text-gray-600 mt-2">
+            Transparent tracking of project funding sources and utilization patterns across all Smart City initiatives
           </p>
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          <div className="bg-white rounded-xl shadow-lg p-6 border border-blue-100 flex flex-col items-center">
-            <div className="text-5xl font-bold text-[#184E77]">₹182.61 Cr</div>
-            <div className="text-lg text-gray-600 mt-2">Total Funds Allocated</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-[#1E6091]/10 rounded-lg">
+                <DollarSign className="w-5 h-5 text-[#1E6091]" />
+              </div>
+              <h3 className="text-sm font-medium text-gray-600">Total Funds Allocated</h3>
+            </div>
+            <div className="text-4xl font-bold text-[#184E77]">
+              ₹{totalAllocated.toFixed(2)} Cr
+            </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-6 border border-blue-100 flex flex-col items-center">
-            <div className="text-5xl font-bold text-[#184E77]">₹142.28 Cr</div>
-            <div className="text-lg text-gray-600 mt-2">Funds Utilized</div>
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-[#1E6091]/10 rounded-lg">
+                <TrendingUp className="w-5 h-5 text-[#1E6091]" />
+              </div>
+              <h3 className="text-sm font-medium text-gray-600">Funds Utilized</h3>
+            </div>
+            <div className="text-4xl font-bold text-[#184E77]">
+              ₹{fundsUtilized.toFixed(2)} Cr
+            </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-6 border border-blue-100 flex flex-col items-center">
-            <div className="text-5xl font-bold text-[#184E77]">78%</div>
-            <div className="text-lg text-gray-600 mt-2">Utilization Rate</div>
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-[#1E6091]/10 rounded-lg">
+                <Percent className="w-5 h-5 text-[#1E6091]" />
+              </div>
+              <h3 className="text-sm font-medium text-gray-600">Utilization Rate</h3>
+            </div>
+            <div className="text-4xl font-bold text-[#184E77]">
+              {utilizationRate.toFixed(0)}%
+            </div>
           </div>
         </div>
 
         {/* Fund Utilization Section */}
-        <div className=" overflow-hidden mb-16">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
           <div className="p-6 md:p-8">
-            <div className="flex flex-col md:flex-row items-center justify-between mb-8">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
-                  Fund Utilization
-                </h2>
-                <p className="text-gray-600 max-w-2xl">
-                  Visual representation of budget allocation versus actual expenditure across 
-                  different project categories
-                </p>
-              </div>
+            <div className="mb-6 pb-4 border-b border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Fund Utilization</h3>
+              <p className="text-gray-600 text-sm">
+                Visual representation of budget allocation versus actual expenditure across different project categories
+              </p>
             </div>
             
-            <div className=" p-4 md:p-6 flex justify-center">
+            <div className="flex justify-center">
               <img 
                 src={FundUtilization} 
                 alt="Fund Utilization" 
-                className="w-full max-w-4xl"
+                className="w-full max-w-4xl rounded-lg"
               />
             </div>
           </div>
         </div>
 
         {/* Fund Source Section */}
-        <div className="overflow-hidden">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200">
           <div className="p-6 md:p-8">
-            <div className="mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
-                Fund Sources
-              </h2>
-              <p className="text-gray-600 max-w-2xl">
+            <div className="mb-6 pb-4 border-b border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Fund Sources</h3>
+              <p className="text-gray-600 text-sm">
                 Breakdown of funding sources for Smart City Thiruvananthapuram projects
               </p>
             </div>
             
-            <div className="flex flex-col lg:flex-row items-center gap-8">
-              <div className="w-full p-4 flex justify-center">
-                <img 
-                  src={FundSource} 
-                  alt="Fund Source" 
-                  className="w-full"
-                />
-              </div>
+            <div className="flex justify-center">
+              <img 
+                src={FundSource} 
+                alt="Fund Source" 
+                className="w-full rounded-lg"
+              />
             </div>
           </div>
         </div>

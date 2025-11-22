@@ -1,16 +1,26 @@
 import React, { useState, useEffect } from 'react';
+import { CheckCircle2, DollarSign, Image as ImageIcon, X } from 'lucide-react';
 import axios from 'axios';
+import API_CONFIG from '../../config/api';
 import Banner from '../../assets/banners/completeProjectBanner.png';
 
 const CompletedProject = () => {
   const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
+  const [viewMode, setViewMode] = useState('table'); // 'table' or 'gallery'
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/completed-projects/')
-      .then(res => setProjects(res.data))
-      .catch(err => console.error("Error fetching completed projects:", err));
+    axios.get(API_CONFIG.getUrl(API_CONFIG.ENDPOINTS.COMPLETED_PROJECTS))
+      .then(res => {
+        setProjects(res.data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Error fetching completed projects:", err);
+        setLoading(false);
+      });
   }, []);
 
   const openLightbox = (image) => {
@@ -29,9 +39,9 @@ const CompletedProject = () => {
 
 
   return (
-    <div className="bg-gray-50">
-      {/* Banner Section */}
-      <div className="relative h-64 w-full overflow-hidden">
+    <div className="bg-gray-50 min-h-screen">
+      {/* Banner */}
+      <div className="relative h-48 md:h-64 w-full overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -40,7 +50,9 @@ const CompletedProject = () => {
         ></div>
         <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center px-4">
-            <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">Completed Projects</h1>
+            <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
+              Completed Projects
+            </h1>
             <p className="text-white text-lg md:text-xl max-w-2xl mx-auto opacity-90">
               Celebrating our successful urban transformation initiatives
             </p>
@@ -48,178 +60,187 @@ const CompletedProject = () => {
         </div>
       </div>
 
-      {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
-        {/* Introduction */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Achievements</h2>
-          <div className="h-0.5 w-24 bg-[#184E77] mx-auto mb-6"></div>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-            These successfully completed projects demonstrate our commitment to building a smarter,
-            more sustainable Thiruvananthapuram across various sectors.
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Header */}
+        <div className="mb-8 pb-6 border-b border-gray-200">
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="flex items-center gap-3">
+              <CheckCircle2 className="w-6 h-6 text-[#1E6091]" />
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Our Achievements</h2>
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setViewMode('table')}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  viewMode === 'table'
+                    ? 'bg-[#1E6091] text-white'
+                    : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+                }`}
+              >
+                Table View
+              </button>
+              <button
+                onClick={() => setViewMode('gallery')}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  viewMode === 'gallery'
+                    ? 'bg-[#1E6091] text-white'
+                    : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+                }`}
+              >
+                Gallery View
+              </button>
+            </div>
+          </div>
+          <p className="text-gray-600 mt-2">
+            These successfully completed projects demonstrate our commitment to building a smarter, more sustainable Thiruvananthapuram
           </p>
         </div>
 
-        {/* Table */}
-        <div className="mb-20">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="text-2xl font-bold text-gray-800">Completed Projects List</h3>
-            <div className="text-sm text-gray-500">{projects.length} projects completed</div>
+        {loading ? (
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-12 text-center">
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#1E6091]"></div>
+            <p className="mt-4 text-gray-600">Loading projects...</p>
           </div>
-
-          <div className="border border-gray-200 bg-white">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="bg-[#184E77] text-white">
-                  <tr>
-                    <th className="py-4 px-6 text-left font-medium">No</th>
-                    <th className="py-4 px-6 text-left font-medium">Project Name</th>
-                    <th className="py-4 px-6 text-right font-medium">Amount (₹ in Cr)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  {projects
-                    .filter(project => project.project_name)
-                    .map((project, index) => (
-                      <tr key={project.id} className="hover:bg-gray-50 transition-colors">
-                        <td className="py-4 px-6 text-gray-700 font-medium">{index + 1}</td>
-                        <td className="py-4 px-6 text-gray-700">{project.project_name}</td>
-                        <td className="py-4 px-6 text-right text-gray-700 font-medium">{project.amount}</td>
-                      </tr>
-                    ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        {/* Gallery */}
-        <div className="mb-20">
-          <div className="flex justify-between items-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-800">Project Highlights</h3>
-            <div className="text-sm text-gray-500">Click images to view</div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-            <div className="md:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
-              {projects.slice(0, 3).map((project, idx) =>
-                project.images?.map((img, i) =>
-                  idx === 0 && i === 0 ? (
-                    <div
-                      key={img.id}
-                      className="md:col-span-2 h-96 overflow-hidden cursor-pointer group relative"
-                      onClick={() => openLightbox(img)}
-                    >
-                      <img
-                        src={img.image}
-                        alt={img.caption || 'Project Image'}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6 group-hover:opacity-100 transition-opacity duration-300">
-                        <div>
-                          <h3 className="text-xl font-bold text-white">{img.caption}</h3>
-                        </div>
-                      </div>
-                    </div>
-                  ) : null
-                )
-              )}
-
-              {projects.slice(1, 3).flatMap(project =>
-                project.images?.map((img) => (
-                  <div
-                    key={img.id}
-                    className="h-80 overflow-hidden cursor-pointer group relative"
-                    onClick={() => openLightbox(img)}
-                  >
-                    <img
-                      src={img.image}
-                      alt={img.caption || 'Project Image'}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6 group-hover:opacity-100 transition-opacity duration-300">
-                      <h3 className="text-xl font-bold text-white">{img.caption}</h3>
-                    </div>
-                  </div>
-                ))
-              )}
-            </div>
-
-            {/* Vertical image on the right */}
-            <div className="md:col-span-5">
-              {projects[3]?.images?.[0] && (
-                <div
-                  className="h-full overflow-hidden cursor-pointer group relative"
-                  onClick={() => openLightbox(projects[3].images[0])}
-                >
-                  <img
-                    src={projects[3].images[0].image}
-                    alt={projects[3].images[0].caption || 'Project'}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 className="text-xl font-bold text-white">{projects[3].images[0].caption}</h3>
-                  </div>
+        ) : (
+          <>
+            {/* Table View */}
+            {viewMode === 'table' && (
+              <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
+                <div className="p-4 border-b border-gray-200 flex justify-between items-center">
+                  <h3 className="text-lg font-semibold text-gray-900">Completed Projects List</h3>
+                  <span className="text-sm text-gray-500">{projects.filter(p => p.project_name).length} projects</span>
                 </div>
-              )}
-            </div>
-          </div>
-        </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse">
+                    <thead>
+                      <tr className="bg-[#1E6091] text-white">
+                        <th className="p-4 text-left font-semibold text-sm">No</th>
+                        <th className="p-4 text-left font-semibold text-sm">Project Name</th>
+                        <th className="p-4 text-right font-semibold text-sm">
+                          <div className="flex items-center justify-end gap-2">
+                            <DollarSign className="w-4 h-4" />
+                            <span>Amount (₹ Cr)</span>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {projects.filter(project => project.project_name).length > 0 ? (
+                        projects
+                          .filter(project => project.project_name)
+                          .map((project, index) => (
+                            <tr
+                              key={project.id}
+                              className={`border-b border-gray-200 hover:bg-gray-50 transition-colors ${
+                                index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                              }`}
+                            >
+                              <td className="p-4 font-medium text-gray-700">{index + 1}</td>
+                              <td className="p-4 text-gray-900">{project.project_name}</td>
+                              <td className="p-4 text-right text-gray-700 font-medium">₹{project.amount} Cr</td>
+                            </tr>
+                          ))
+                      ) : (
+                        <tr>
+                          <td colSpan="3" className="p-8 text-center text-gray-500">
+                            No completed projects found
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
 
-        {/* Summary */}
-        <div className="bg-[#184E77] text-white p-8 border border-[#1E6091]">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Transformation in Numbers</h2>
-            <div className="h-0.5 w-24 bg-white mx-auto mb-6"></div>
-            <p className="text-gray-300 text-lg mb-8">
-              Our completed projects have made a significant impact across the city,
-              improving infrastructure, mobility, and quality of life for residents.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white p-4 text-[#184E77]">
-                <div className="text-3xl font-bold mb-2">{projects.length}</div>
-                <div className="text-gray-700 font-medium">Projects Completed</div>
+            {/* Gallery View */}
+            {viewMode === 'gallery' && projects.some(p => p.images && p.images.length > 0) && (
+              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+                <div className="mb-6 pb-4 border-b border-gray-200">
+                  <div className="flex items-center gap-3">
+                    <ImageIcon className="w-5 h-5 text-[#1E6091]" />
+                    <h3 className="text-xl font-bold text-gray-900">Project Highlights</h3>
+                  </div>
+                  <p className="text-sm text-gray-600 mt-1">Click images to view full size</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {projects.flatMap(project =>
+                    project.images?.map((img) => (
+                      <div
+                        key={img.id}
+                        className="cursor-pointer rounded-lg border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
+                        onClick={() => openLightbox(img)}
+                      >
+                        <img
+                          src={img.image}
+                          alt={img.caption || 'Project Image'}
+                          className="w-full h-64 object-cover"
+                        />
+                        {img.caption && (
+                          <div className="p-3 bg-gray-50">
+                            <p className="text-sm text-gray-700 font-medium">{img.caption}</p>
+                          </div>
+                        )}
+                      </div>
+                    ))
+                  )}
+                </div>
               </div>
-              <div className="bg-white p-4 text-[#184E77]">
-                <div className="text-3xl font-bold mb-2">₹{totalInvestment} Cr</div>
-                <div className="text-gray-700 font-medium">Total Investment</div>
+            )}
+
+            {/* Summary Stats */}
+            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+              <div className="mb-4 pb-4 border-b border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900">Transformation in Numbers</h3>
               </div>
-              <div className="bg-white p-4 text-[#184E77]">
-                <div className="text-3xl font-bold mb-2">24+</div>
-                <div className="text-gray-700 font-medium">Locations Transformed</div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="text-center p-4 bg-gray-50 rounded-lg">
+                  <div className="text-3xl font-bold text-[#1E6091] mb-2">
+                    {projects.filter(p => p.project_name).length}
+                  </div>
+                  <div className="text-sm text-gray-600 font-medium">Projects Completed</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg">
+                  <div className="text-3xl font-bold text-[#1E6091] mb-2">
+                    ₹{totalInvestment} Cr
+                  </div>
+                  <div className="text-sm text-gray-600 font-medium">Total Investment</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg">
+                  <div className="text-3xl font-bold text-[#1E6091] mb-2">24+</div>
+                  <div className="text-sm text-gray-600 font-medium">Locations Transformed</div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </>
+        )}
       </div>
 
       {/* Lightbox Modal */}
       {lightboxOpen && currentImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50" onClick={closeLightbox}>
-          <div className="relative max-w-5xl w-full mx-4" onClick={(e) => e.stopPropagation()}>
-            {/* Close button */}
+        <div
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={closeLightbox}
+        >
+          <div className="relative max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 text-white text-3xl font-bold z-50 hover:text-gray-300"
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
             >
-              &times;
+              <X className="w-8 h-8" />
             </button>
-
-            {/* Image */}
             <img
               src={currentImage.image}
               alt={currentImage.caption || 'Full View'}
-              className="w-full max-h-[80vh] object-contain shadow-lg"
+              className="w-full max-h-[80vh] object-contain rounded-lg"
             />
-
-            {/* Caption */}
             {currentImage.caption && (
-              <p className="text-white text-center mt-4 text-lg">{currentImage.caption}</p>
+              <p className="text-white text-center mt-4">{currentImage.caption}</p>
             )}
           </div>
         </div>
       )}
-
     </div>
   );
 };

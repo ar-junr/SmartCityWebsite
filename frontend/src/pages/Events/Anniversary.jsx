@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from 'react';
+import { Image as ImageIcon, X } from 'lucide-react';
 import axios from 'axios';
-import { IoIosClose } from "react-icons/io";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import API_CONFIG from '../../config/api';
+import Banner from '../../assets/banners/pageBanner.jpg';
+
 const Anniversary = () => {
   const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  useEffect(() => {
-    AOS.init({ once: true, duration: 800 });
-  }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/anniversary-images/')
-      .then(response => setImages(response.data))
-      .catch(error => console.error("Error fetching anniversary images:", error));
+    axios.get(API_CONFIG.getUrl(API_CONFIG.ENDPOINTS.ANNIVERSARY_IMAGES))
+      .then(response => {
+        setImages(response.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error("Error fetching anniversary images:", error);
+        setLoading(false);
+      });
   }, []);
   const openLightbox = (image) => {
     setSelectedImage(image);
@@ -39,77 +44,109 @@ const Anniversary = () => {
     };
   }, [lightboxOpen]);
   return (
-    <div className="min-h-screen py-8 px-4" data-cy="anniversary-page" data-aos="fade-in">
-      {/* Title from mock */}
-      <h1 className="text-3xl font-bold text-center text-[#184E77] mb-8">
-        {images[0]?.title || 'Anniversary Gallery'}
-      </h1>
-      {/* Header */}
-      <div className="max-w-6xl mx-auto text-center mb-12" data-aos="zoom-in">
-        <h1 className="text-4xl md:text-6xl font-bold text-[#184E77] mb-4 transform -rotate-2">
-          Celebrating <span className="text-[#184E77]">8 Years</span> of Excellence
-        </h1>
-        <div className="w-32 h-2 bg-gradient-to-r from-[#184E77] to-[#184E77] mx-auto mb-6"></div>
-        <p className="text-lg md:text-xl text-[#184E77] max-w-3xl mx-auto">
-          Journey through our milestone moments, cherished memories, and the people who made it all possible.
-        </p>
-      </div>
-      {/* Gallery */}
-      <div className="max-w-7xl mx-auto" data-aos="fade-up">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-          {images.map((image, index) => (
-            <div
-              key={image.id}
-              className="group relative overflow-hidden shadow-xl cursor-pointer transform transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl"
-              onClick={() => openLightbox(image)}
-              data-aos="zoom-in"
-              data-aos-delay={index * 50}
-            >
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={image.image}
-                  alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  data-cy={`anniversary-image-${index}`}
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 p-4 text-white">
-                  <p className="text-sm opacity-90">Click to view</p>
-                </div>
-              </div>
-              <div className="absolute top-4 -right-10 w-40 bg-[#184E77] text-white text-center py-1 transform rotate-45 font-bold text-sm shadow-lg">
-                8 Years
-              </div>
-            </div>
-          ))}
+    <div className="bg-gray-50 min-h-screen" data-cy="anniversary-page">
+      {/* Banner */}
+      <div className="relative h-48 md:h-64 w-full overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `linear-gradient(to right, rgba(24, 78, 119, 0.9), rgba(30, 96, 145, 0.8)), url(${Banner || ''})`,
+          }}
+        ></div>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center px-4">
+            <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
+              Celebrating 8 Years of Excellence
+            </h1>
+            <p className="text-white text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
+              Journey through our milestone moments, cherished memories, and the people who made it all possible.
+            </p>
+          </div>
         </div>
       </div>
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Header */}
+        <div className="mb-8 pb-6 border-b border-gray-200">
+          <div className="flex items-center gap-3 mb-2">
+            <ImageIcon className="w-6 h-6 text-[#1E6091]" />
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+              {images[0]?.title || 'Anniversary Gallery'}
+            </h2>
+          </div>
+          <p className="text-gray-600 mt-2">
+            Celebrating our journey and achievements over the years
+          </p>
+        </div>
+
+        {/* Gallery */}
+        {loading ? (
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-12 text-center">
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#1E6091]"></div>
+            <p className="mt-4 text-gray-600">Loading images...</p>
+          </div>
+        ) : images.length > 0 ? (
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {images.map((image, index) => (
+                <div
+                  key={image.id}
+                  className="group relative overflow-hidden rounded-lg border border-gray-200 cursor-pointer hover:shadow-md transition-shadow"
+                  onClick={() => openLightbox(image)}
+                  data-cy={`anniversary-image-${index}`}
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={API_CONFIG.getMediaUrl(image.image)}
+                      alt={image.alt}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="absolute bottom-0 left-0 right-0 p-3">
+                      <p className="text-white text-xs">{image.alt}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-12 text-center">
+            <ImageIcon className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+            <p className="text-gray-600">No images available</p>
+          </div>
+        )}
+      </div>
+
       {/* Lightbox */}
       {lightboxOpen && selectedImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
           onClick={closeLightbox}
         >
           <div
-            className="relative max-w-5xl w-full max-h-[90vh]"
+            className="relative max-w-5xl w-full"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="absolute -top-12 right-0 text-white hover:text-[#1E6091] transition-colors"
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
               onClick={closeLightbox}
             >
-              <IoIosClose className='text-5xl' />
+              <X className="w-8 h-8" />
             </button>
-            <div className="bg-white overflow-hidden shadow-2xl" data-aos="zoom-in">
+            <div className="bg-white overflow-hidden rounded-lg shadow-2xl">
               <img
-                src={selectedImage.image}
+                src={API_CONFIG.getMediaUrl(selectedImage.image)}
                 alt={selectedImage.alt}
                 className="w-full max-h-[70vh] object-contain"
               />
-              <div className="p-4 bg-[#184E77] text-white">
-                <p className="text-sm opacity-90">{selectedImage.alt}</p>
-              </div>
+              {selectedImage.alt && (
+                <div className="p-4 bg-[#1E6091] text-white">
+                  <p className="text-sm">{selectedImage.alt}</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

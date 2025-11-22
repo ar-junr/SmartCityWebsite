@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
-
-const API_BASE = "http://127.0.0.1:8000/api";
-const CHAT_URL = API_BASE.replace(/\/+$/, "") + "/chat/";
+import API_CONFIG from "../config/api";
 
 export default function ChatbotFinalDemo() {
   return <ChatWidget />;
@@ -42,7 +40,7 @@ function ChatWidget() {
 
     try {
       const { data } = await axios.post(
-        CHAT_URL,
+        API_CONFIG.getUrl(API_CONFIG.ENDPOINTS.CHAT),
         { message: text, lang },
         { headers: { "Content-Type": "application/json" }, timeout: 15000 }
       );
@@ -80,7 +78,7 @@ function ChatWidget() {
         onClick={() => setOpen((v) => !v)}
         className="rounded-full text-white"
         style={{
-          position: "fixed", bottom: 20, left: 20, zIndex: 2147483647,
+          position: "fixed", bottom: 20, right: 20, zIndex: 2147483647,
           padding: "12px 16px", borderRadius: 9999,
           background: "linear-gradient(135deg, #2563eb 0%, #22c55e 100%)",
           boxShadow: "0 10px 24px rgba(0,0,0,.18)",
@@ -94,7 +92,7 @@ function ChatWidget() {
         <div
           className="bg-white border rounded-2xl shadow-2xl flex flex-col overflow-hidden"
           style={{
-            position: "fixed", bottom: 90, left: 20, zIndex: 2147483647,
+            position: "fixed", bottom: 90, right: 20, zIndex: 2147483647,
             width: 360, maxWidth: "92vw", height: 520, pointerEvents: "auto",
           }}
         >

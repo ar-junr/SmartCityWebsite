@@ -72,15 +72,6 @@ const Header = () => {
             {/* Vertical Divider */}
             <div className="h-6 w-px bg-[#1E6091]"></div>
 
-            {/* Citizen Portal Link */}
-            <a
-              href="#"
-              className="flex items-center hover:text-accent-yellow transition-colors text-sm font-medium px-2 py-1 rounded-md hover:bg-white/10"
-            >
-              <FaUser className="mr-2 w-4 h-4" />
-              {t('Smart_Chat')}
-            </a>
-
             {/* Smart App Link */}
             <a
               href="#"

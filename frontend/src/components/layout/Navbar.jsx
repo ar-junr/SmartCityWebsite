@@ -9,6 +9,7 @@ import { MdEmail } from "react-icons/md";
 import { IoPhonePortraitOutline } from "react-icons/io5";
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
+import API_CONFIG from '../../config/api';
 import navigationData from '../../data/navData';
 import Logo from '../../assets/images/SCTLLogo.png';
 import GovKerala from '../../assets/images/govKerala.png';
@@ -20,6 +21,7 @@ const Navbar = () => {
   const navbarRef = useRef(null);
   const searchInputRef = useRef(null);
   const dropdownTimeoutRef = useRef(null);
+  const navItemRefs = useRef({});
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [showSearch, setShowSearch] = useState(false);
@@ -74,8 +76,8 @@ const Navbar = () => {
     const fetchNavigation = async () => {
       try {
         const [navRes, pageRes] = await Promise.all([
-          axios.get('http://127.0.0.1:8000/api/navigation/'),
-          axios.get('http://127.0.0.1:8000/api/pages/')
+          axios.get(API_CONFIG.getUrl(API_CONFIG.ENDPOINTS.NAVIGATION)),
+          axios.get(API_CONFIG.getUrl(API_CONFIG.ENDPOINTS.PAGES))
         ]);
 
         const navItems = navRes.data;
@@ -138,18 +140,19 @@ const Navbar = () => {
   const displayNavigation = navigation.length > 0 ? navigation : navigationData;
 
   return (
-    <nav className="font-sans relative z-40 w-full" data-cy="navbar">
+    <nav className="font-sans relative z-40 w-full" data-cy="navbar" style={{ overflow: 'visible' }}>
       {/* Navigation Bar - Sticky */}
       <div 
         ref={bannerRef} 
         className={`bg-gradient-primary shadow-md transition-all duration-300 w-full ${isScrolled ? 'fixed top-0 left-0 right-0 z-50 shadow-large' : 'relative'}`}
-        style={{ overflow: 'visible' }}
+        style={{ overflow: 'visible', position: 'relative' }}
       >
         <div
           ref={navbarRef}
           className="w-full mx-auto px-2 sm:px-4 py-2 sm:py-3 relative"
+          style={{ overflow: 'visible', position: 'relative' }}
         >
-          <div className="w-full flex flex-wrap items-center justify-between gap-2">
+          <div className="w-full flex flex-wrap items-center justify-between gap-2" style={{ overflow: 'visible', position: 'relative' }}>
             {/* Mobile Logos - Left Side */}
             <div className="flex lg:hidden items-center gap-2 sm:gap-3 flex-shrink-0">
               <a href="/" className="h-10 w-12 flex items-center justify-center hover:opacity-90 transition-opacity">
@@ -170,8 +173,13 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex flex-1 justify-center items-center gap-1 xl:gap-2">
-
+            <div 
+              className="hidden lg:flex flex-1 justify-center items-center gap-1 xl:gap-2" 
+              style={{ 
+                position: 'relative', 
+                overflow: 'visible'
+              }}
+            >
               {displayNavigation.map((item, index) => {
                 const handleMouseEnter = () => {
                   if (dropdownTimeoutRef.current) {
@@ -190,9 +198,18 @@ const Navbar = () => {
                 return (
                   <div 
                     key={item.name || index} 
-                    className="relative group" 
+                    className="relative" 
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
+                    style={{ 
+                      position: 'relative',
+                      zIndex: activeDropdown === item.name ? 10000 : 1
+                    }}
+                    ref={(el) => {
+                      if (el) {
+                        navItemRefs.current[item.name] = el;
+                      }
+                    }}
                   >
                     <NavLink
                       to={item.href || '#'}
@@ -208,27 +225,78 @@ const Navbar = () => {
 
                     {((item.dropdown && item.dropdown.length > 0) || (item.pages && item.pages.length > 0)) && activeDropdown === item.name && (
                       <div 
-                        className="absolute left-1/2 -translate-x-1/2 bg-white shadow-large rounded-xl py-2 w-auto min-w-[240px] max-w-[300px] z-[9999] border border-gray-200 animate-fade-in-up" 
+                        className="absolute bg-white shadow-2xl rounded-2xl py-3 w-auto min-w-[260px] max-w-[320px] border-0 overflow-hidden"
                         style={{ 
-                          top: 'calc(100% + 8px)',
+                          top: 'calc(100% + 12px)',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
                           position: 'absolute',
-                          overflow: 'visible'
+                          zIndex: 10001,
+                          pointerEvents: 'auto',
+                          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)'
                         }}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                       >
-                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-gray-200 rotate-45"></div>
-                        <div className="relative bg-white rounded-xl overflow-visible">
+                        {/* Arrow indicator */}
+                        <div 
+                          className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45"
+                          style={{
+                            boxShadow: '-2px -2px 4px rgba(0, 0, 0, 0.05)'
+                          }}
+                        ></div>
+                        
+                        {/* Gradient background effect */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-blue-50/30 opacity-50 pointer-events-none"></div>
+                        
+                        {/* Content */}
+                        <div className="relative z-10">
                           {item.dropdown && item.dropdown.map((sub, idx) => (
-                            <NavLink key={sub.name || idx} to={sub.href} className={({ isActive }) => `block px-4 py-2.5 text-sm border-b border-gray-100 last:border-b-0 transition-all duration-200 ${isActive ? 'text-primary-600 font-semibold bg-primary-50' : 'text-gray-700'} hover:text-primary-600 hover:bg-primary-50 hover:pl-5`}>
-                              {t(`navbar.${sub.name}`, sub.name)}
+                            <NavLink 
+                              key={sub.name || idx} 
+                              to={sub.href} 
+                              className={({ isActive }) => 
+                                `group relative block px-5 py-3.5 text-sm transition-all duration-300 ${
+                                  idx !== (item.dropdown?.length || 0) - 1 && !item.pages ? 'border-b border-gray-100' : ''
+                                } ${
+                                  isActive 
+                                    ? 'text-[#1E6091] font-semibold bg-gradient-to-r from-blue-50 to-transparent' 
+                                    : 'text-gray-700 hover:text-[#1E6091] hover:bg-gradient-to-r hover:from-blue-50/50 hover:to-transparent'
+                                }`
+                              }
+                            >
+                              <span className="relative z-10 flex items-center">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#1E6091] opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-3"></span>
+                                {t(`navbar.${sub.name}`, sub.name)}
+                              </span>
+                              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#1E6091] to-[#184E77] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </NavLink>
                           ))}
-                          {item.pages && item.pages.map((p, idx) => (
-                            <NavLink key={p.name || idx} to={p.href} className={({ isActive }) => `block px-4 py-2.5 text-sm border-b border-gray-100 last:border-b-0 transition-all duration-200 ${isActive ? 'text-primary-600 font-semibold bg-primary-50' : 'text-gray-700'} hover:text-primary-600 hover:bg-primary-50 hover:pl-5`}>
-                              {t(`navbar.${p.name}`, p.name)}
-                            </NavLink>
-                          ))}
+                          {item.pages && item.pages.map((p, idx) => {
+                            const isLast = idx === (item.pages?.length || 0) - 1;
+                            const hasDropdown = item.dropdown && item.dropdown.length > 0;
+                            return (
+                              <NavLink 
+                                key={p.name || idx} 
+                                to={p.href} 
+                                className={({ isActive }) => 
+                                  `group relative block px-5 py-3.5 text-sm transition-all duration-300 ${
+                                    !isLast || hasDropdown ? 'border-b border-gray-100' : ''
+                                  } ${
+                                    isActive 
+                                      ? 'text-[#1E6091] font-semibold bg-gradient-to-r from-blue-50 to-transparent' 
+                                      : 'text-gray-700 hover:text-[#1E6091] hover:bg-gradient-to-r hover:from-blue-50/50 hover:to-transparent'
+                                  }`
+                                }
+                              >
+                                <span className="relative z-10 flex items-center">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-[#1E6091] opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-3"></span>
+                                  {t(`navbar.${p.name}`, p.name)}
+                                </span>
+                                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#1E6091] to-[#184E77] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                              </NavLink>
+                            );
+                          })}
                         </div>
                       </div>
                     )}
@@ -292,10 +360,6 @@ const Navbar = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                   </svg>
                 </button>
-                <a href="#" className="flex items-center gap-2 px-3 py-2 hover:bg-[#184E77] transition-colors text-sm rounded-md">
-                  <FaUser className="w-4 h-4" />
-                  {t('Smart_Chat')}
-                </a>
                 <a href="#" className="flex items-center gap-2 px-3 py-2 hover:bg-[#184E77] transition-colors text-sm rounded-md">
                   <IoPhonePortraitOutline className='w-5 h-5' />
                   <span>{t('smart_app')}</span>

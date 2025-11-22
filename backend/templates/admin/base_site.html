@@ -1,0 +1,194 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | Smart City Administration{% endblock %}
+
+{% block branding %}
+<div style="display: flex; align-items: center; gap: 12px;">
+    <h1 id="site-name" style="margin: 0; font-size: 24px; font-weight: 600; color: #184E77;">
+        <a href="{% url 'admin:index' %}" style="text-decoration: none; color: inherit;">
+            🏙️ Smart City Administration
+        </a>
+    </h1>
+</div>
+{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+    :root {
+        --primary: #184E77;
+        --secondary: #1E6091;
+        --accent: #22c55e;
+        --success: #10b981;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --light: #f8fafc;
+        --dark: #0f172a;
+    }
+    
+    #header {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+        border-bottom: 3px solid var(--accent);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    #header a:link, #header a:visited {
+        color: white;
+    }
+    
+    #header a:hover {
+        color: var(--accent);
+    }
+    
+    #branding h1, #branding h1 a:link, #branding h1 a:visited {
+        color: white;
+        font-weight: 600;
+    }
+    
+    .module h2, .module caption, .inline-group h2 {
+        background: var(--primary);
+        color: white;
+        border-radius: 4px 4px 0 0;
+    }
+    
+    .button, input[type=submit], input[type=button], .submit-row input, a.button {
+        background: var(--secondary);
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        font-weight: 500;
+        transition: all 0.2s;
+    }
+    
+    .button:hover, input[type=submit]:hover, input[type=button]:hover, .submit-row input:hover, a.button:hover {
+        background: var(--primary);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    
+    .button.default, input[type=submit].default, .submit-row input.default {
+        background: var(--accent);
+    }
+    
+    .button.default:hover, input[type=submit].default:hover, .submit-row input.default:hover {
+        background: var(--success);
+    }
+    
+    .object-tools a {
+        background: var(--secondary);
+        border-radius: 4px;
+    }
+    
+    .object-tools a:hover {
+        background: var(--primary);
+    }
+    
+    #changelist-filter {
+        background: var(--light);
+        border-radius: 4px;
+    }
+    
+    #changelist-filter h2 {
+        background: var(--secondary);
+        color: white;
+        border-radius: 4px 4px 0 0;
+    }
+    
+    .dashboard .module table th {
+        background: var(--light);
+        color: var(--dark);
+    }
+    
+    .dashboard .module table td {
+        border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .dashboard .module table tr:hover {
+        background: #f1f5f9;
+    }
+    
+    .field-box {
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+        padding: 15px;
+        margin-bottom: 15px;
+        background: white;
+    }
+    
+    .form-row {
+        margin-bottom: 15px;
+    }
+    
+    .vLargeTextField, .vTextField, select, textarea {
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+        padding: 8px 12px;
+        transition: border-color 0.2s;
+    }
+    
+    .vLargeTextField:focus, .vTextField:focus, select:focus, textarea:focus {
+        border-color: var(--secondary);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(30, 96, 145, 0.1);
+    }
+    
+    .readonly {
+        background: var(--light);
+        padding: 8px 12px;
+        border-radius: 4px;
+    }
+    
+    .success {
+        background: #d1fae5;
+        color: #065f46;
+        padding: 12px;
+        border-radius: 4px;
+        border-left: 4px solid var(--success);
+    }
+    
+    .errorlist {
+        background: #fee2e2;
+        color: #991b1b;
+        padding: 12px;
+        border-radius: 4px;
+        border-left: 4px solid var(--danger);
+    }
+    
+    .messagelist {
+        margin: 20px 0;
+    }
+    
+    .messagelist li {
+        padding: 12px 20px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    
+    .messagelist .success {
+        background: #d1fae5;
+        color: #065f46;
+        border-left: 4px solid var(--success);
+    }
+    
+    .messagelist .error {
+        background: #fee2e2;
+        color: #991b1b;
+        border-left: 4px solid var(--danger);
+    }
+    
+    .messagelist .warning {
+        background: #fef3c7;
+        color: #92400e;
+        border-left: 4px solid var(--warning);
+    }
+    
+    .messagelist .info {
+        background: #dbeafe;
+        color: #1e40af;
+        border-left: 4px solid var(--secondary);
+    }
+</style>
+{% endblock %}
+
