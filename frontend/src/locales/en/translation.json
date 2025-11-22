@@ -1,0 +1,810 @@
+{
+  "Smart_Chat": "Smart Chat",
+  "smart_app": "Smart TVM App",
+  "footer": {
+    "description": "Smart City Thiruvananthapuram is an integrated knowledge-based initiative for sustainable urban development.",
+    "date": "22-06-2025 (Sunday)",
+    "time": "13 : 46 : 42",
+    "visitors": "Visitors",
+    "in_media": "In Media",
+    "recent_events": "Recent Events",
+    "contact_us": "Contact Us",
+    "follow_us": "Follow Us",
+    "covid": "Covid-19",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "disclaimer": "Disclaimer",
+    "copyright": "Copyright © 2025 Smart City Thiruvananthapuram - All Rights Reserved"
+  },
+  "navbar": {
+    "Home": "Home",
+    "City Profile": "City Profile",
+    "What is a 'Smart City'": "What is a 'Smart City'",
+    "About 'Smart City Mission'": "About 'Smart City Mission'",
+    "Smart Cities Challenge": "Smart Cities Challenge",
+    "Vision & Strategy": "Vision & Strategy",
+    "Project Milestones": "Project Milestones",
+    "SCTL": "SCTL",
+    "Special Purpose Vehicle": "Special Purpose Vehicle",
+    "Consultant (PMC)": "Consultant (PMC)",
+    "Project Funds": "Project Funds",
+    "Financials": "Financials",
+    "Projects": "Projects",
+    "CITIIS 2.0": "CITIIS 2.0",
+    "MPR": "MPR",
+    "Ongoing Projects": "Ongoing Projects",
+    "Completed Projects": "Completed Projects",
+    "SCTL Project": "SCTL Project",
+    "Benefiaciary Details": "Benefiaciary Details",
+    "Tenders": "Tenders",
+    "Events": "Events",
+    "News": "News",
+    "Conclave": "Conclave",
+    "8th Anniversary of Smartcity Mission": "8th Anniversary of Smartcity Mission",
+    "Inauguration": "Inauguration",
+    "Ente Keralam": "Ente Keralam",
+    "Gallery": "Gallery",
+    "Photo Gallery": "Photo Gallery",
+    "Video Gallery": "Video Gallery",
+    "Downloads": "Downloads",
+    "Government Order's(GO's)": "Government Order's(GO's)",
+    "Careers": "Careers",
+    "Internships": "Internships",
+    "Tulip internship": "Tulip internship",
+    "Contact Us": "Contact Us",
+    "Register a Complaint": "Register a Complaint",
+    "Poll": "Poll",
+    "RTI": "RTI",
+    "Search": "Search",
+    "searchPlaceholder": "Search..."
+  },
+  "homeItem1": {
+    "imageAlt": "Smart City Trivandrum",
+    "heading": "Welcome to Smart City Thiruvananthapuram Ltd.",
+    "para1": "Smart City Thiruvananthapuram Limited is a Special Purpose Vehicle (SPV) set up for implementation of the Smart City Mission of Government of India with a project overlay of ₹1538 Cr. Thiruvananthapuram was selected in the third round of Smart City Selection and secured first rank in the Smart City Challenge in 2017.",
+    "para2": "The proposal submitted to GOI had 43 projects aimed at improving basic infrastructure of the city and harnessing the use of IT-based solutions to make the city smart.",
+    "para3": "The projects can be grouped into two categories: Pan City Solution (IT-based solution) for the entire corporation area and Area Based Development (ABD) Projects, specifically targeted for 9 wards in the city centre as a retrofit model."
+  },
+  "homeItem2": {
+    "visionTitle": "Vision",
+    "visionText": "A vibrant & alluring capital city that is inclusive, safe & accessible and which respects its natural environment & celebrates its heritage & culture.",
+    "strategyTitle": "Strategy",
+    "strategyText": "The five Strategic Pillars that lay the foundation for the Vision Statement are derived from City Profile, Citizen Engagement & SWOT analysis. Below are listed the key focus areas – Strategic Direction & Goals, that will support & build on the Vision.",
+    "readMore": "Read More",
+    "imageAlt": "Vision and Strategy"
+  },
+  "homeItem3": {
+    "title": "Key Officials",
+    "description": "Meet the dedicated leadership team guiding Thiruvananthapuram's transformation into a Smart City",
+    "linkedin": "LinkedIn",
+    "viewAll": "View All Officials"
+  },
+  "homeItem4": {
+    "title": "Updates & Announcements",
+    "loading": "Loading announcements...",
+    "noAnnouncements": "No announcements available",
+    "defaultType": "Announcement",
+    "dateNA": "Date N/A",
+    "readMore": "Read full story",
+    "viewAll": "View All Updates"
+  },
+  "city_profile": {
+    "title": "City Profile",
+    "about_title": "About Thiruvananthapuram",
+    "city_name": "Thiruvananthapuram",
+    "state": "Capital city of Kerala",
+    "quote": "Referred by Mahatma Gandhi as the \"Evergreen city of India\"",
+    "population": "Population",
+    "population_value": "9.86 lakh (2011 Census)",
+    "growth_rate": "Growth Rate",
+    "growth_rate_value": "3.25% (2001 - 2011)",
+    "area": "Area",
+    "area_value": "214.86 sq.km",
+    "density": "Population Density",
+    "density_value": "4,470 persons/sq.km",
+    "dominant_sectors": "Dominant Sectors",
+    "tourism": "Tourism",
+    "it": "IT",
+    "education": "Education",
+    "explore_more": "Explore More About Our City",
+    "city_highlights": "City Highlights",
+    "smart_city_overview": "Smart City Overview",
+    "project_area": "Project Area",
+    "abd_area": "ABD Area"
+  },
+  "mission_about": {
+    "title": "About 'Smart City Mission'",
+    "section1_heading": "The Government of India has launched the Smart Cities Mission on 25 June 2015.",
+    "section1_text": "The implementation of the Smart Cities Mission is done by a Special Purpose Vehicle (SPV) to be set up at city level in the form of a limited company under the Companies Act, 2013 and will be promoted by the State/UT and the Urban Local Body (ULB) jointly both having 50:50 equity shareholding. After selection, each selected Smart Cities have to set up SPVs and start implementation of their Smart City Proposal, preparation of Detailed Project Reports (DPRs), tenders etc. The SPV will convert the Smart City Proposal into projects through Project Management Consultants (PMCs) and implementation thereafter.",
+    "section2_heading": "Cities selected under Smart City Mission across India",
+    "points": {
+      "1": "The objective is to promote sustainable and inclusive cities that provide core infrastructure and give a decent quality of life to its citizens, a clean and sustainable environment and application of 'Smart' Solutions.",
+      "2": "The focus is on sustainable and inclusive development and the idea is to look at compact areas, create a replicable model which will act like a lighthouse to other aspiring cities. The Smart Cities Mission is meant to set examples that can be replicated both within and outside the Smart City, catalysing the creation of similar Smart Cities in various regions and parts of the country.",
+      "3": "Some of the core infrastructure elements in a Smart City would include adequate water supply, assured electricity supply, sanitation, including solid waste management, efficient urban mobility and public transport, affordable housing, especially for the poor, robust IT connectivity and digitalization, good governance, especially e-Governance and citizen participation, sustainable environment, safety and security of citizens, particularly women, children and the elderly and health and education.",
+      "4": "The strategic components of the Smart Cities Mission are city improvement (retrofitting), city renewal (redevelopment) and city extension (Greenfield development) plus a Pan-city initiative in which Smart Solutions are applied covering larger parts of the city.",
+      "5": "Area-based development will transform existing areas (retrofit and redevelop), including slums, into better planned human settlements, thereby, improving liveability of the whole cities. Development of well-planned and fully serviced new areas (greenfield) will be encouraged around cities in order to accommodate the rapidly expanding population in urban areas. Application of Smart Solutions will enable cities to use technology to improve infrastructure and services.",
+      "6": "Comprehensive development in this way will improve quality of life, create employment and enhance incomes for all, especially the poor and the disadvantaged, leading to inclusive cities."
+    }
+  },
+  "missionChallenge": {
+    "heading": "Smart Cities Challenge",
+    "para1": "In 2015, the Union Ministry of Urban Development announced the Smart Cities Challenge. The challenge aims to create exemplar areas in cities by merging innovative plans with latest technologies. By creating these replicable exemplar areas it aims at redefining the way city is imagined in India. The Challenge aims to find solutions for the major problems of the cities by merging innovative plans and latest information technologies. It aims to improve economic opportunity, quality of life and ensure public accountability. In short, it aims at making life in the cities smarter and faster.",
+    "para2": "The Smart Cities Mission proposed a two stage selection process. In 2015, in the first stage of the challenge only Kochi got selected from Kerala though the state nominated six other cities including Thiruvananthapuram. Thankfully Kochi got selected in the final list of twenty states. To win the Smart City challenge, the cities chosen for challenge have to present project proposals developed in consultation with public and various other stakeholders. The mission stresses the use of information technology and social media to reach out to various sections. Once selected, the city will receive Rs. 500 crore from the centre in a span of five years to implement the proposal while the city administration and state government has to finance an equal amount. Though Thiruvananthapuram was not selected among the first 100, fortunately it was selected again for competition in May 2016. This has once again opened a chance for Trivandrum to finally prove its mettle and become a Smart Thiruvananthapuram. Smart Thiruvananthapuram is the bold response of the Thiruvananthapuram Corporation and its people to the challenge thrown at it by the Smart Cities Challenge. By taking this challenge up, the city corporation aims to remake the life and image of the city and create a city of a better future."
+  },
+  "smartCityDef": {
+    "title": "What is a Smart City",
+    "understanding": "Understanding Smart Cities",
+    "subtitle": "Solving Urban Problems Using Technology",
+    "components": "Smart City Components",
+    "caption": "Visual representation of integrated smart city systems"
+  },
+  "missionVision": {
+    "heading": "Vision & Strategy"
+  },
+  "visionSection": {
+    "visionTitle": "Vision",
+    "visionText": "A vibrant & alluring capital city that is inclusive, safe & accessible and which respects its natural environment & celebrates its heritage & culture.",
+    "strategyTitle": "Strategy",
+    "strategyText": "The five Strategic Pillars that lay the foundation for the Vision Statement are derived from City Profile, Citizen Engagement & SWOT analysis. Below are listed the key focus areas – Strategic Direction & Goals, that will support & build on the Vision."
+  },
+  "connectivity": {
+    "title": "Strategic Location and Connectivity",
+    "imageAlt": "Strategic Location and Connectivity",
+    "airport": {
+      "title": "8TH BUSIEST AIRPORT IN INDIA",
+      "description": "The International Airport is considered an all-weather airport and is busiest in terms of international traffic."
+    },
+    "railway": {
+      "title": "CENTRAL RAILWAY STATION",
+      "description": "Is the largest railway station in Kerala in terms of passenger movement and an important rail hub in Southern Railway. There are direct rail connections to all major cities in India."
+    },
+    "ksrtc": {
+      "title": "KSRTC",
+      "description": "Is one of the oldest state-run public bus transport services in India. Daily scheduled distance is over 14,22,546 km"
+    },
+    "bulletPoints": [
+      "Administrative capital, located along the west coast (southernmost part of India)",
+      "Acts as a gateway to the Middle East and South Asian countries",
+      "Southern Air Command headquarters of the Indian Air Force"
+    ]
+  },
+  "evolution": {
+    "title": "City Evolution & Identity",
+    "imageAlt": "City Evolution",
+    "points": [
+      "Derived from 'Thiru-Anantha-Puram' meaning The town of Lord Anantha",
+      "Marthanda Varma founded the princely state of Travancore with Thiruvananthapuram as the capital in 1745",
+      "Acted as a trading post for spices, sandalwood, and ivory during pre-colonial and colonial period",
+      "Municipality set up in 1920 and upgraded to Corporation in 1940",
+      "International tourist destination – Shri Anantha Padmanabhaswamy Temple and Kovalam Beach",
+      "Hosts the Annual International Film Festival",
+      "Thumba Equatorial Rocket Launching Station is located here"
+    ]
+  },
+  "demography": {
+    "title": "Area and Demography",
+    "imageAlt": "Area Demography",
+    "stats": [
+      {
+        "label": "Average density",
+        "value": "4,470 persons/sq.Km"
+      },
+      {
+        "label": "Sex ratio",
+        "value": "1,088 to 1,000"
+      },
+      {
+        "label": "Slum population",
+        "value": "75,623 persons"
+      },
+      {
+        "label": "Households and average size",
+        "value": "1,96,202 households, 4 persons/household"
+      },
+      {
+        "label": "Average literacy rate",
+        "value": "86%"
+      }
+    ]
+  },
+  "landuse": {
+    "title": "Land Use Pattern",
+    "mapAlt": "Map of Thiruvananthapuram",
+    "columns": {
+      "landUse": "Land Use",
+      "area": "Area (sq. km)",
+      "percent": "%",
+      "guideline": "URDPFI Guidelines"
+    },
+    "source": "Source: Draft Masterplan Report 2015",
+    "data": [
+      {
+        "landUse": "Residential",
+        "area": "120.34",
+        "percent": "56",
+        "guideline": "40-45%"
+      },
+      {
+        "landUse": "Commercial",
+        "area": "2.53",
+        "percent": "1",
+        "guideline": "3 - 4%"
+      },
+      {
+        "landUse": "Public/Semi Public",
+        "area": "27.86",
+        "percent": "13",
+        "guideline": "10 - 12%"
+      },
+      {
+        "landUse": "Transportation",
+        "area": "6.46",
+        "percent": "3",
+        "guideline": "12 - 14%"
+      },
+      {
+        "landUse": "Industrial",
+        "area": "1.82",
+        "percent": "1",
+        "guideline": "8 - 10%"
+      },
+      {
+        "landUse": "Parks & Open Space",
+        "area": "0.54",
+        "percent": "0",
+        "guideline": "18 - 20%"
+      },
+      {
+        "landUse": "Agriculture/Paddy Cultivation",
+        "area": "48.27",
+        "percent": "23",
+        "guideline": "-"
+      },
+      {
+        "landUse": "Water Bodies",
+        "area": "5.18",
+        "percent": "2",
+        "guideline": "-"
+      },
+      {
+        "landUse": "Total",
+        "area": "214.60",
+        "percent": "100%",
+        "guideline": ""
+      }
+    ]
+  },
+  "demography": {
+    "title": "Area and Demography",
+    "imageAlt": "Area Demography",
+    "averageDensity": "Average density",
+    "sexRatio": "Sex ratio",
+    "slumPopulation": "Slum population",
+    "householdSize": "Households and average size",
+    "literacyRate": "Average literacy rate"
+  },
+  "planning": {
+    "heading": "Planning and Development Strategies",
+    "strategies": [
+      {
+        "title": "Improving basic services",
+        "description": "Basic Services include water, sanitation and waste management. Emphasis is placed on equitable access to these urban basic services, especially for the poor. It promotes the development of clean, energy efficient, affordable, and human-centered design that can deliver better services to citizens, while at the same time make the most effective use of natural resources and cutting down on fossil fuel reliance and energy consumption.",
+        "goals": [
+          "GOAL 01: 100% coverage of 24x7 water supply & optimization of water usage through smart water network.",
+          "GOAL 02: 100% coverage of roadside storm water drains along with regular cleaning & maintenance of the major drains.",
+          "GOAL 03: Provide adequate public toilets in key public & commercial areas.",
+          "GOAL 04: Ensure a clean city through integrated collection, transportation & management of solid waste.",
+          "GOAL 05: Improve service delivery of public utilities & services."
+        ]
+      },
+      {
+        "title": "Streamlining service delivery & governance",
+        "description": "Ensuring the delivery of services through enabling transparency and improving accountability.",
+        "goals": [
+          "GOAL 07: Ensure open, accountable & responsible governance.",
+          "GOAL 08: Improve inter-department co-ordination for services."
+        ]
+      },
+      {
+        "title": "Creating a well-connected, safe & accessible city centre",
+        "description": "Thiruvananthapuram City caters to a large district, city & tourist population, a majority of which frequent the city centre, travel to & from work, access healthcare, partake in tourism, entertainment & recreation. To ensure that residents & tourists can experience an increased quality of life, the city aims to improve mobility & connectivity through actions that will contribute to a safe, accessible & convenient transportation network that promotes green space in urban areas to make the city a more pleasant & accessible place to live & work.A well balanced multi-modal transportation network facilitates the ability of people to move within, around, in & out of the city. Diversifying the methods by which people can get around is an important element of a healthy, sustainable & prosperous Thiruvananthapuram.",
+        "goals": [
+          "GOAL 09: Create better planned parking facilities.",
+          "GOAL 10: Ensure encroachment free & continuous pathways/walkways.",
+          "GOAL 11: Improve traffic discipline.",
+          "GOAL 12: Make the city easily Navigable & Legible by all groups of people.",
+          "GOAL 13: Promote & encourage a shift from Private vehicles to Public Transport.",
+          "GOAL 14: Reduce traffic congestion & frequency of road accidents.",
+          "GOAL 15: Create an atmosphere of being & feeling safe through surveillance & street lighting.",
+          "GOAL 16: Enable a universally accessible & convenient transportation network."
+        ]
+      },
+      {
+        "title": "Re‑densification with creative land‑use",
+        "description": "Maximizing and optimizing government land in the city centre through densification and housing varied activities and programs.",
+        "goals": [
+          "GOAL 17: Encourage a diverse land‑use mix.",
+          "GOAL 18: Plan, build & upgrade infrastructure to support growth & urban intensification."
+        ]
+      },
+      {
+        "title": "Celebrating & conserving historic & cultural assets",
+        "description": "Celebration of culture will be a catalyst for economic development, community engagement, participation, & social cohesion.",
+        "goals": [
+          "GOAL 19: Create & re‑adapt spaces to celebrate the city's cultural identity.",
+          "GOAL 20: Restore & upgrade structures of historic importance."
+        ]
+      },
+      {
+        "title": "Leveraging educational institutions & tourism potential",
+        "description": "Developing expertise for local tourism businesses & hospitality services is central to optimizing the value of tourism in Thiruvananthapuram. Communities with rich cultural heritage & craft skills will be equipped with entrepreneurship & business management skills to assist them in growing their businesses & Thiruvananthapuram’s cultural attractions. The city aims to promote cultural & heritage tourism, together with local communities, by implementing community-inclusive business models.",
+        "goals": [
+          "GOAL 21: Expand & leverage the tourism, service industry & hospitality sectors",
+          "GOAL 22: Work with business & universities to support talent creation & innovation."
+        ]
+      },
+      {
+        "title": "Enabling disaster mitigation",
+        "description": "By supporting and strengthening community-led disaster risk reduction actions and increasing institutional adaptive capacity, the city will support all of Thiruvananthapuram’s residents to better adapt to natural-human hazards and the increasing risks posed by climate change.While identifying & planning for foreseeable risks is an important part of disaster risk reduction, we will also build resilience in our infrastructure so that they can withstand a range of shocks & stresses, even those that are unforeseen.",
+        "goals": [
+          "GOAL 23: Mitigate flooding via canals in core city areas.",
+          "GOAL 24: Set up faster emergency response systems."
+        ]
+      },
+      {
+        "title": "Encouraging active living & healthy communities",
+        "description": "We will work to promote & facilitate the benefits of a healthy lifestyle, through infrastructure change & engagement with the community.",
+        "goals": [
+          "GOAL 25: Prevent the occurrence of mosquito‑borne diseases.",
+          "GOAL 26: Promote active living & getting outside."
+        ]
+      },
+      {
+        "title": "Facilitating sustainable built & natural landscapes",
+        "description": "There is a growing importance for people & municipalities when it comes to protecting the environment & better understanding the impact & implications of environmental issues.Acting now by preserving the natural environment, reducing our carbon footprint & building the city in an environmentally sound manner, will benefit future generations.",
+        "goals": [
+          "GOAL 27: Promote & encourage environmentally friendly urbanization."
+        ]
+      },
+      {
+        "title": "Promoting diversity & fostering inclusiveness",
+        "description": "There is a growing importance for people & municipalities when it comes to protecting the environment & better understanding the impact & implications of environmental issues.Acting now by preserving the natural environment, reducing our carbon footprint & building the city in an environmentally sound manner, will benefit future generations.",
+        "goals": [
+          "GOAL 28: Promote & encourage inclusiveness and community participation."
+        ]
+      }
+    ]
+  },
+  "consultant": {
+    "title": "Consultants",
+    "krailTitle": "Kerala Rail Development Corporation Limited (K-Rail)",
+    "krailDescription": "Kerala Rail Development Corporation Ltd (K-Rail) KRDCL is a joint venture organization jointly established by Government of Kerala and Ministry of Railways, Government of India for prospering the railway infrastructure in the state of Kerala. K-Rail undertakes railway projects from its inception to operation which will inter-alia include the preparation and submission of Detailed Project Report (DPR) and obtain required approvals from appropriate authorities for the implementation of the project.",
+    "pmcTitle": "PMC Team",
+    "pmcIntro": "Our dedicated Project Management Consultancy team brings together diverse expertise to ensure the successful implementation of Smart City Thiruvananthapuram projects.",
+    "expertiseTitle": "Expertise & Experience",
+    "expertiseText": "Our PMC team combines decades of experience in urban planning, engineering, and project management with specialized knowledge in smart city technologies.",
+    "responsibilitiesTitle": "Key Responsibilities",
+    "responsibility1": "Project planning and implementation oversight",
+    "responsibility2": "Quality control and technical guidance",
+    "responsibility3": "Stakeholder coordination and management",
+    "responsibility4": "Timeline and budget monitoring",
+    "commitmentTitle": "Commitment to Excellence",
+    "commitmentText": "The PMC team ensures all projects adhere to the highest standards of quality, sustainability, and innovation as we transform Thiruvananthapuram into a model smart city."
+  },
+  "citiis": {
+    "title": "CITIIS 2.0",
+    "subtitle": "City Investments to Innovate, Integrate and Sustain",
+    "about": {
+      "heading": "About CITIIS 2.0",
+      "overviewTitle": "Program Overview",
+      "overviewText": "CITIIS (City Investments to Innovate, Integrate and Sustain) is a flagship program under the Government of India's Smart Cities Mission. CITIIS 2.0 represents a strategic partnership between the Ministry of Housing and Urban Affairs (MoHUA) and international development agencies to foster sustainable urban development.",
+      "focusTitle": "Strategic Focus Areas",
+      "focusIntro": "The program provides financial and technical assistance for:",
+      "focus1": "Promoting circular economy through integrated waste management at city level",
+      "focus2": "Climate-oriented reform actions at state level",
+      "focus3": "Institutional strengthening and knowledge management at national level",
+      "collabTitle": "International Collaboration",
+      "collabText": "Conceived by MoHUA in collaboration with AFD, KfW (German Development Bank), European Union, and National Institute of Urban Affairs (NIUA), CITIIS 2.0 addresses critical urban challenges while contributing to India's commitments under the Paris Agreement and Sustainable Development Goals."
+    },
+    "gallery": {
+      "heading": "CITIIS Project Gallery",
+      "subtext": "Showcasing innovative urban development projects under the CITIIS program",
+      "title1": "CITIIS Workshop",
+      "desc1": "Officials from Trivandrum Smart City Ltd take part in initiation workshop for CITIIS 2.0",
+      "title2": "Stakeholder Engagement",
+      "desc2": "Onsite mission to Trivandrum by AFD & NIUA Officials",
+      "title3": "Project Implementation",
+      "desc3": "Initiation workshop with 18 Smart Cities selected under the CITIIS 2.0 program",
+      "title4": "Our Team",
+      "desc4": "Our leaders representing Trivandrum Smart City Ltd at the CITIIS 2.0 program"
+    }
+  },
+  "sctlProjects": {
+    "hero": {
+      "title1": "Transforming",
+      "title2": "Thiruvananthapuram",
+      "subtitle": "Innovative urban development projects creating sustainable futures"
+    },
+    "status": {
+      "completed": "Project Completed",
+      "initiative": "SCTL Initiative"
+    },
+    "impact": {
+      "title": "Transformative Urban Impact",
+      "subtitle": "Our projects create sustainable value across Thiruvananthapuram",
+      "items": [
+        {
+          "title": "Urban Renewal",
+          "desc": "Revitalized public spaces, enhanced cultural hubs, and improved urban infrastructure",
+          "icon": "🏙️"
+        },
+        {
+          "title": "Sustainable Mobility",
+          "desc": "Reduced traffic congestion through smart parking solutions and electric public transport",
+          "icon": "🚌"
+        },
+        {
+          "title": "Environmental Stewardship",
+          "desc": "Waste management solutions and renewable energy adoption reducing carbon footprint",
+          "icon": "🌿"
+        }
+      ]
+    },
+    "projects": [
+      {
+        "title": "Cultural Streets - Manaveeyam Veedhi",
+        "content": "Manaveeyam Veedhi is a 180-meter road stretch from Museum-Vellayambalam Road to the Althara junction. This street is renowned for its artwork displays and vibrant cultural performances. The SCTL proposal aims to support and enhance these activities by physically upgrading the street and transforming it into a true Cultural Street. The new streetscape design prioritizes pedestrians and universal accessibility. It includes a covered venue, sculptures, art gallery space, exercise park, street library, gender-friendly toilets, drinking water fountains, food kiosks, and cycle parking. The estimated cost is ₹1.92 Cr. Utility ducting and related work are included under the Smart Road Project. The contract was awarded to M/s. SILK for ₹1.84 Cr and completed in 2023.",
+        "stats": [
+          {
+            "label": "Project Cost",
+            "value": "₹1.92 Cr"
+          },
+          {
+            "label": "Completed",
+            "value": "2023"
+          },
+          {
+            "label": "Contractor",
+            "value": "M/s. SILK"
+          }
+        ]
+      },
+      {
+        "title": "Construction of Multi Level Car Parking at Thampanoor",
+        "content": "Construction of Multi-Level Car Parking opposite Thampanoor Central Railway Station started in 2020 as part of the Smart Cities Mission, with 50% funding from the state government. The total project cost was ₹22.9 Cr and the contract for ₹18.89 Cr was awarded to M/s. Heather Construction. The parking facility accommodates 400 bikes and 22 cars. A Smart Parking system with a mobile app is also integrated. The project was inaugurated in April 2023 as part of the state's 100-day program.",
+        "stats": [
+          {
+            "label": "Capacity",
+            "value": "400 bikes + 22 cars"
+          },
+          {
+            "label": "Project Cost",
+            "value": "₹22.9 Cr"
+          },
+          {
+            "label": "Contractor",
+            "value": "M/s. Heather Construction"
+          }
+        ]
+      },
+      {
+        "title": "Construction of Open-Air Auditorium at Thiruvananthapuram Corporation",
+        "content": "This project aims to develop an open-air auditorium within the Corporation office premises. It includes a covered stage and a space that serves as both parking and seating area during events. Landscaping is also part of the project to make the environment public and eco-friendly. Completed in 2023.",
+        "stats": [
+          {
+            "label": "Completed",
+            "value": "2023"
+          },
+          {
+            "label": "Features",
+            "value": "Dual-purpose space"
+          },
+          {
+            "label": "Location",
+            "value": "Corporation Premises"
+          }
+        ]
+      },
+      {
+        "title": "Biomining of Wastes at Chalai",
+        "content": "The old waste dump at Chalai is being cleared using biomining, following CPCB guidelines. The land is being reclaimed through this process. The project was completed in 2023.",
+        "stats": [
+          {
+            "label": "Method",
+            "value": "Biomining"
+          },
+          {
+            "label": "Completed",
+            "value": "2023"
+          },
+          {
+            "label": "Compliance",
+            "value": "CPCB norms"
+          }
+        ]
+      },
+      {
+        "title": "Development of Traffic Signal CCC Building",
+        "content": "Revamping existing locations and installing new cameras across the city. Key components include: City Surveillance, Intelligent Video Analytics & Video Wall, Smart Traffic Control, Smart Governance and Citizen Services, and OFC backbone. The data center building has been completed.",
+        "stats": [
+          {
+            "label": "Components",
+            "value": "5 key systems"
+          },
+          {
+            "label": "Status",
+            "value": "Building completed"
+          },
+          {
+            "label": "Coverage",
+            "value": "PAN City area"
+          }
+        ]
+      },
+      {
+        "title": "Procurement of Buses for KSRTC (Phases 1, 2, 3)",
+        "content": "To enhance smart mobility, 113 electric buses are being procured in three phases for KSRTC. This reduces road congestion, pollution, and promotes energy efficiency. The first phase was flagged off in August 2023.",
+        "stats": [
+          {
+            "label": "Buses",
+            "value": "113 EV buses"
+          },
+          {
+            "label": "Phases",
+            "value": "3"
+          },
+          {
+            "label": "Launched",
+            "value": "August 2023"
+          }
+        ]
+      },
+      {
+        "title": "Construction of Smart Roads – KRFB Phase 1",
+        "content": "Work on Manaveeyam Road and Kala Bhavan Road was completed in August 2023.",
+        "stats": [
+          {
+            "label": "Roads",
+            "value": "Manaveeyam & Kala Bhavan"
+          },
+          {
+            "label": "Completed",
+            "value": "August 2023"
+          },
+          {
+            "label": "Contractor",
+            "value": "KRFB"
+          }
+        ]
+      },
+      {
+        "title": "Rooftop Solar by ANERT (Phases 1-6)",
+        "content": "The project aims to support large campuses and government buildings in transitioning to renewable solar energy. SCTL has already implemented 807 KWP of grid-tied rooftop solar systems, reducing 1000 tons of carbon emissions annually and lowering dependency on the KSEB grid. Implemented phase-wise and completed in December 2023.",
+        "stats": [
+          {
+            "label": "Capacity",
+            "value": "807 KWP"
+          },
+          {
+            "label": "Carbon Reduction",
+            "value": "1000 tons/year"
+          },
+          {
+            "label": "Completed",
+            "value": "December 2023"
+          }
+        ]
+      }
+    ]
+  },
+  "conclave": {
+    "posterAlt": "APAC Conclave Poster",
+    "about": {
+      "title": "About the Conclave",
+      "paragraphs": [
+        "To explore and showcase the culture of Innovation, Growth, Best Practice Smart City Thiruvananthapuram Ltd and APAC News Network will be organising a three-day 'APAC Smart & Sustainable City Virtual Conclave, Thiruvananthapuram' from February 16-17-18, 2021 on a virtual platform.",
+        "The aim of the Conclave is to facilitate the exchange of knowledge and collaborations on smart city and urban development, IT and e-Governance and place the spotlight on the pro-people urban work that is being done in Thiruvananthapuram and rest of Kerala.",
+        "The 'APAC Smart & Sustainable City Virtual Conclave, Thiruvananthapuram' will focus on key initiatives undertaken by Government of India aligned with the vision of Smart Cities Mission, especially the ICT initiatives, technology interventions, innovations in urban and IT sector, and best practices across the country."
+      ]
+    },
+    "stats": {
+      "title": "Event Statistics",
+      "items": [
+        { "count": "2500+", "label": "Delegates" },
+        { "count": "7+", "label": "Countries" },
+        { "count": "20+", "label": "States" },
+        { "count": "15+", "label": "Sessions" }
+      ]
+    },
+    "focus": {
+      "title": "Key Focus Areas",
+      "items": [
+        "Smart Cities Ideas & Best Practices",
+        "Role of IT and Emerging Technologies: Innovative Solutions",
+        "Urban Mobility for Smarter Cities",
+        "Citizen Engagement Technologies",
+        "Tourism & Heritage",
+        "Sustainable Urban Development",
+        "Urban Innovations",
+        "Waste & Water Management",
+        "Safe, Secure & Connected Cities",
+        "Smart, Clean & Green Energy"
+      ]
+    },
+    "recordings": { "title": "Event Recordings" },
+    "speakers": { "title": "Featured Speakers" },
+    "highlights": {
+      "title": "Event Highlights",
+      "items": [
+        {
+          "title": "Global Participation",
+          "desc": "2500+ delegates from 7+ countries and 20+ states sharing insights and best practices"
+        },
+        {
+          "title": "Knowledge Exchange",
+          "desc": "15+ sessions covering urban innovation, sustainability, and governance"
+        },
+        {
+          "title": "Virtual Platform",
+          "desc": "Cutting‑edge virtual event platform enabling global participation and networking"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "address": {
+      "title": "Address",
+      "lines": [
+        "4th Floor, Felicity Square Building,",
+        "Opp AG Office, Statue,",
+        "Thiruvananthapuram.",
+        "Pincode: 695001"
+      ]
+    },
+    "email": { "label": "Email", "value": "info@smartcitytvm.in" },
+    "phone": { "label": "Phone", "value": "+91-0471-4010374" },
+    "location": {
+      "title": "Location",
+      "iframeTitle": "Smart City Thiruvananthapuram Location",
+      "iframeSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.4802579818943!2d76.9476803152765!3d8.488145693841827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bb0a5a9b7b0f%3A0x1e5f3b5a5a5b5b5b!2sSmart%20City%20Thiruvananthapuram%20Limited!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
+      "mapLink": "https://maps.app.goo.gl/5YiwpFLcikhju2Vb8",
+      "mapLinkText": "Open in Google Maps"
+    },
+    "personnel": {
+      "title": "Key Personnel",
+      "headers": { "name":"Name","designation":"Designation","email":"E‑mail","role":"Role" },
+      "list": [
+        {
+          "name":"Rahul Krishna Sharma IAS",
+          "designation":"CEO, SCTL",
+          "email":"ceo@smartcitytvm.in",
+          "role":"Appellate Authority"
+        },
+        {
+          "name":"Krishna Kumar S",
+          "designation":"GM, SCTL",
+          "email":"gm@smartcitytvm.in",
+          "role":"Nodal Officer"
+        }
+      ]
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "labels": { "name":"Name","email":"Email","phone":"Phone Number","message":"Message" },
+      "placeholders": { "name":"Your name","email":"Your email","phone":"Your phone number","message":"Your message here..." },
+      "submit": "Send Message",
+      "success": "Thank you! Your message has been submitted."
+    },
+    "hours": {
+      "title": "Office Hours",
+      "lines": [
+        "Monday to Friday: 9:00 AM - 5:30 PM",
+        "Saturday: 10:00 AM - 1:00 PM",
+        "Closed on Sundays and Public Holidays"
+      ]
+    }
+  },
+  "complaint": {
+    "bannerTitle": "Register A Complaint",
+    "formTitle": "Report an Issue",
+    "formSubtitle": "Help us improve by reporting any problems or concerns you've encountered",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "project": "Project / Service Concerned",
+      "complaint": "Complaint Details",
+      "attachment": "Attach Supporting Documents (Optional)",
+      "checkbox": "I confirm that the information provided is accurate to the best of my knowledge"
+    },
+    "placeholders": {
+      "name": "Your full name",
+      "email": "your.email@example.com",
+      "project": "Which project/service is this about?",
+      "complaint": "Please describe your complaint in detail..."
+    },
+    "upload": {
+      "click": "Click to upload",
+      "drag": "or drag and drop",
+      "formats": "PNG, JPG, PDF up to 10MB"
+    },
+    "submitButton": "Submit Complaint",
+    "success": {
+      "title": "Complaint Submitted Successfully!",
+      "message": "Thank you for bringing this to our attention. Your complaint has been registered and our team will address it shortly.",
+      "button": "Submit Another Complaint"
+    },
+    "contactBox": {
+      "title": "Need Immediate Assistance?",
+      "call": "Call Us",
+      "email": "Email Us",
+      "visit": "Visit Us",
+      "address": "4th Floor, Felicity Square Building, Statue"
+    }
+  },
+  "poll": {
+    "title": "How is our website?",
+    "thankYouTitle": "Thank You for Your Feedback!",
+    "thankYouMessage": "Your opinion helps us improve our website and services.",
+    "submitAnother": "Submit Another Response",
+    "weValue": "We value your opinion!",
+    "ratePrompt": "Please rate your experience with our website",
+    "options": {
+      "nice": "Nice",
+      "medium": "Medium",
+      "bad": "Bad"
+    },
+    "submitFeedback": "Submit Feedback",
+    "moreFeedbackTitle": "Want to share more detailed feedback?",
+    "moreFeedbackMsg": "We'd love to hear your suggestions for improvement",
+    "sendEmail": "Send us an email"
+  },
+  "rti": {
+    "banner": "Right to Information Act",
+    "officerTitle": "Information Officers of Smart City Thiruvananthapuram Limited",
+    "officerDescription": "As per the Right to Information Act, 2005, the following officers are designated as the Information Officers of Smart City Thiruvananthapuram Limited.",
+    "address": "Office Address",
+    "addressLines": [
+      "4th Floor, Felicity Square Building",
+      "Opp AG Office, Statue",
+      "Thiruvananthapuram.",
+      "Pincode: 695001"
+    ],
+    "email": "Email",
+    "phone": "Phone",
+    "aboutRTI": "About the Right to Information Act",
+    "aboutText": "The Right to Information Act, 2005 (RTI Act) empowers citizens to seek information from public authorities to promote transparency and accountability in the working of every public authority.",
+    "keyProvisions": "Key Provisions:",
+    "provisionsList": [
+      "Citizens can request information from any public authority",
+      "Authorities must respond within 30 days",
+      "Information should be provided in the requested format",
+      "Minimal fees may apply for information requests"
+    ],
+    "howToFile": "How to File an RTI Request",
+    "howToList": [
+      "Submit a written request in English or Malayalam",
+      "Include your contact information",
+      "Clearly specify the information sought",
+      "Pay the applicable fee (if any)",
+      "Submit to the Public Information Officer"
+    ],
+    "feeStructure": "RTI Fee Structure",
+    "feeList": {
+      "application": "Application Fee",
+      "perPage": "Per Page (A4/A3)",
+      "inspection": "Inspection of Records",
+      "diskette": "Diskette or Floppy"
+    },
+    "feeValues": {
+      "application": "₹10",
+      "perPage": "₹2",
+      "inspection": "No fee for first hour",
+      "diskette": "₹50"
+    },
+    "downloadsTitle": "Download RTI Forms & Resources",
+    "form": "RTI Application Form",
+    "act": "RTI Act, 2005 (Full Text)",
+    "guideline": "RTI Guidelines"
+  }
+}
